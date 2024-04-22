@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Audi A3 1985",
+      "description": "gammel fin og velholdt bil",
+      "actualPrice": 10000,
+      "expires": "April 29, 2024 20:17:40 GMT+02:00",
+      "active": true,
+      "winner": "hans@gmail.com"
+    },
+    {
+      "id": 2,
+      "title": "BMW 3/20 PS1932-1934",
+      "description": "Denne bil er virkelig gammel, den er faktisk så utroligt gammel at den kun findes i sort/hvid eksemplarer",
+      "actualPrice": 950000,
+      "expires": "June 20, 2024 14:32:07 GMT+02:00",
+      "active": true,
+      "winner": "hans@gmail.com"
+    },
+    {
+      "id": 3,
+      "title": "Audi Type K (1922 - 1925)",
+      "description": "Denne bil er ret speciel, den er nemlig meget gammel",
+      "actualPrice": 1500000,
+      "expires": "June 12, 2024 14:32:07 GMT+02:00",
+      "active": true,
+      "winner": "hans@gmail.com"
+    },
+    {
+      "id": 4,
+      "title": "Jaguar E-Type 3,8 Cabriolet",
+      "description": "Gammel men hurtig",
+      "actualPrice": 7000000,
+      "expires": "april 22, 2024 14:32:07 GMT+02:00",
+      "active": true,
+      "winner": "hans@gmail.com"
+    }
+  ]
+}
