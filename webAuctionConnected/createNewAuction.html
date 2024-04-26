@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="createAuctions__body">
+    <main class="createAuctions">
+      <h1 class="createAuctions__header text__subtitle">Create New Auction</h1>
+      <form class="createAuction__form" action="">
+        <section>
+          <section class="createAuction__data --brand text__body">
+            <label class="createAuction__label" for="name">Brand</label>
+            <input class="createAuction__input" type="text" name="name" />
+          </section>
+          <section class="createAuction__data --model text__body">
+            <label class="createAuction__label" for="name">Model</label>
+            <input class="createAuction__input" type="text" name="name" />
+          </section>
+          <section class="createAuction__data --year text__body">
+            <label class="createAuction__label" for="name">Year</label>
+            <input class="createAuction__input" type="text" name="name" />
+          </section>
+          <section class="createAuction__data --kilometer text__body">
+            <label class="createAuction__label" for="name">Kilometer</label>
+            <input class="createAuction__input" type="text" name="name" />
+          </section>
+        </section>
+        <section class="createAuction__data --startingPrice text__body">
+          <label class="createAuction__label" for="name">Starting price</label>
+          <input class="createAuction__input" type="number" name="price" />
+        </section>
+        <section class="createAuction__data createAuction__expiry text__body">
+          <label for="start">Expiry Date</label>
+          <input
+            type="date"
+            id="start"
+            name="trip-start"
+            value="2018-07-22"
+            min="2018-01-01"
+            max="2018-12-31"
+          />
+        </section>
+        <section class="createAuction__data createAuction__image">
+          <label class="createAuction__imageLabel" for="images"
+            >Upload Image</label
+          >
+          <input class="createAuction__imageInput" type="file" name="images" />
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
