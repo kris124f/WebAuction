@@ -105,7 +105,7 @@
 
 /* button style */
 
-.admin__button {
+.allAuction__button {
   width: auto;
   padding: 8px;
   justify-content: center;
@@ -345,7 +345,6 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 225px;
   height: 50px;
   margin: 0 0 20px 24px;
-  border-bottom: #e20b0b;
   margin-bottom: 30px;
 }
 .allAuction__title {
@@ -375,8 +374,42 @@
   font-family: "Libre Bodoni";
   font-size: 18px;
 }
-.admin__buttons {
+.allAuctions__button {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+/* - - - Create New Auction - - - */
+.createAuctions__body {
+  background-color: #212126;
+}
+.createAuctions {
+}
+.createAuctions__header {
+}
+.createAuction__form {
+}
+.createAuction__data {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.createAuction__label {
+}
+.createAuction__input {
+  background-color: #212126;
+  border: 2px solid #dfdcc9;
+  border-radius: 10px;
+  min-width: 430px;
+  color: #dfdcc9;
+  padding: 10px;
+  font-size: 18px;
+  width: auto;
+}
+.createAuction__imageLabel {
+}
+.createAuction__imageInput {
+}
+.createAuction__image {
 }
