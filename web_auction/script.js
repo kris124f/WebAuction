@@ -36,3 +36,103 @@ button.addEventListener("click", () => {
 });
 
 // changes the images
+
+function Item(itemId, title, description, startPrice, actualPrice, expires, active) {
+  this.itemId = itemId;
+  this.title = title;
+  this.description = description;
+  this.startPrice = startPrice;
+  this.actualPrice = actualPrice;
+  this.expires = expires;
+  this.active = active;
+}
+function bid(Username,itemId,value)
+{
+  this.Username = Username
+  this.itemId = itemId
+  this.value = value
+}
+fetch('http://127.0.0.1:3000/items/all')
+    .then(response => response.json())
+    .then((items) => {
+        items.forEach((item, index) => {
+            const article = document.querySelectorAll('.productCard')[index];
+
+            if (article) {
+                // Populate the article with data from the item
+                article.querySelector('.productCard__brand').textContent = item.title;
+                article.querySelector('.productCard__description').textContent = item.description;
+                article.querySelector('.productCard__timeLeft').textContent = `Time left: ${new Date(item.expires).toLocaleString()}`;
+                article.querySelector('.productCard__currentPrice').textContent = `${item.actualPrice} DKK`;
+
+                // Assuming 'item.image' contains the base64 image data
+                if (item.image) {
+                    const img = article.querySelector('.productCard__image');
+                    img.src = item.image;
+                }
+            }
+        });
+    })
+    .catch(error => console.error('Error:', error));
+function test(){
+  fetch('http://127.0.0.1:3000/items/all')
+    .then(response => response.json())
+    .then((items) => {
+        items.forEach((item, index) => {
+            const article = document.querySelectorAll('.productCard')[index];
+
+            if (article) {
+                // Populate the article with data from the item
+                article.querySelector('.productCard__brand').textContent = item.title;
+                article.querySelector('.productCard__description').textContent = item.description;
+                article.querySelector('.productCard__timeLeft').textContent = `Time left: ${new Date(item.expires).toLocaleString()}`;
+                article.querySelector('.productCard__currentPrice').textContent = `${item.actualPrice} DKK`;
+                
+                // Assuming 'item.image' contains the base64 image data
+                if (item.image) {
+                    const img = article.querySelector('.productCard__image');
+                    img.src = item.image;
+                }
+            }
+        });
+    })
+    .catch(error => console.error('Error:', error));
+
+}
+document.addEventListener("DOMContentLoaded", function() {
+  const button = document.querySelector('.productCard__button');
+  button.addEventListener('click', setNewBet);
+});
+function setNewBet() {
+ 
+  const bidData = {
+    itemId: 69,
+    value: 2000
+  };
+
+  fetch('http://127.0.0.1:3000/bid', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(bidData),
+  
+})
+
+
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.text(); // Change response.json() to response.text()
+})
+.then(data => {
+  console.log('Response from server:', data); // Log the response
+  // Handle success
+})
+.catch(error => {
+  console.error('Error placing bid:', error);
+  // Handle error
+});
+
+}
