@@ -1,0 +1,382 @@
+/* - - - general styling - - - */
+
+/* text style */
+.splashBody {
+  background-color: #dfdcc9;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.createUser__box {
+  background-color: #212126;
+  width: 500px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(47, 47, 47);
+  margin-bottom: 150px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.createUser__title {
+  color: #dfdcc9;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.card__input {
+  width: 60%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 16px;
+  background-color: #dfdcc9;
+}
+
+.create__button {
+  margin: auto;
+  display: block;
+  font-size: 18px;
+  width: 40%;
+  padding: 10px;
+  margin-top: 45px;
+  text-align: center;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.car__image {
+  z-index: 1000;
+  width: 800px;
+  height: 320px;
+  position: absolute;
+  position: fixed;
+  bottom: 0;
+  right: -12%;
+  animation: slideInRight; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+.splashFooter {
+  background-color: #212126;
+  padding-top: 150px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.text__display {
+  font-size: 85px;
+  color: #dfdcc9;
+  font-family: "Abril Fatface", serif;
+  font-weight: 800px;
+  font-style: normal;
+}
+.text__title {
+  color: #dfdcc9;
+  font-family: "Abril Fatface", serif;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+.text__subtitle {
+  color: #dfdcc9;
+  font-family: "Abril Fatface", serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+.text__body {
+  color: #dfdcc9;
+  font-size: 20px;
+}
+
+/* button style */
+
+.admin__button {
+  width: auto;
+  padding: 8px;
+  justify-content: center;
+  border-radius: 5px;
+  border: 2px solid #212126;
+  background: #dfdcc9;
+  color: #28272f;
+  font-family: Inter;
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+/* - - - User | Auction site - - - */
+.body__auctionPage {
+  margin: 0;
+  background-color: #dfdcc9;
+}
+/* header */
+.header {
+  position: relative;
+  background-color: hsla(248, 9%, 17%, 1);
+  min-height: 636px;
+  display: flex;
+  align-items: center;
+}
+.headerNavbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+}
+.navbar__list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  list-style: none;
+  border-bottom: solid 2px #dfdcc9;
+  padding-bottom: 20px;
+  width: 100%;
+  justify-content: flex-end;
+}
+.navbar__item {
+  text-decoration: none;
+  margin-right: 70px;
+}
+.navbar__link {
+  text-decoration: none;
+  position: relative;
+}
+.navbar__link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #dfdcc9;
+  transition: width 0.5s ease;
+}
+.navbar__link:hover::after {
+  width: 100%;
+}
+.navbar__underline {
+}
+
+.header__display {
+  position: relative;
+  z-index: 2;
+  margin-left: 90px;
+}
+.header__image {
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+/* Main */
+.mainAuction {
+}
+.main__options {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  border-bottom: solid 2px hsla(248, 9%, 17%, 1);
+}
+.option {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 60px;
+}
+
+.options__title {
+  color: hsla(248, 9%, 17%, 1);
+  margin-left: 2px;
+}
+.title {
+  color: hsla(248, 9%, 17%, 1);
+  margin-left: 40px;
+  font-weight: 600;
+}
+/* Product card */
+.productCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.productCard {
+  background-color: hsla(248, 9%, 17%, 1);
+  width: 593.722px;
+  height: 350px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 80px 80px;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.productCard:hover {
+  transform: scale(1.05);
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.productCard__section {
+  flex-basis: 45%;
+  padding-right: 10px;
+  position: relative;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #dfdcc9;
+  font-size: 24px;
+}
+
+.prevButton {
+  left: -60px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+.productCard__image {
+  width: 350px;
+  margin-left: -60px;
+  border-radius: 5px;
+  border: 2px solid #dfdcc9;
+}
+.productCard__brand {
+  color: #dfddca;
+  font-family: "Abril Fatface", serif;
+  font-size: 40px;
+  margin: 20px 0 0 0;
+}
+.productCard__model {
+  margin: 0 0 30px 0;
+  color: #dfddca;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+}
+.productCard__description {
+  color: #dfddca;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+}
+.productCard__timeLeft {
+  color: #f48500;
+  font-family: "Abril Fatface", serif;
+  font-size: 16.937px;
+  margin-bottom: 2px;
+}
+.productCard__currentPrice {
+  color: #dbd8c3;
+  font-family: Inter;
+  font-size: 29.012px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0 10px 0;
+}
+.productCard__input {
+  padding: 9px;
+  font-size: 18px;
+  width: 145px;
+  background-color: #dbd8c3;
+  border-style: none;
+  border-radius: 5px 0 0 5px;
+}
+.productCard__button {
+  background-color: #f48500;
+  padding: 9px;
+  font-size: 18px;
+  border-style: none;
+  border-radius: 0 5px 5px 0;
+}
+.productCard__information {
+  color: #dbd8c3;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 5px 0 30px 0;
+}
+/* Footer */
+.auction__footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #212126;
+  color: #dfddca;
+}
+.footer__column {
+  margin: 40px;
+}
+.footer__title {
+}
+/* - - - admin site - - - */
+.body__admin {
+  background-color: #212126;
+  padding: 70px;
+}
+.admin__title {
+  text-align: center;
+  margin: 0;
+}
+.admin__subtitle {
+}
+.allAuctions__title {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 225px;
+  height: 50px;
+  margin: 0 0 20px 24px;
+  border-bottom: #e20b0b;
+  margin-bottom: 30px;
+}
+.allAuction__title {
+  color: #dfdcc9;
+  font-family: "Libre Bodoni";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.allAuctions__data {
+  background-color: #dfdcc9;
+  display: grid;
+  grid-template-columns: 24px 1fr 1fr 1fr 1fr 1fr 225px;
+  border-radius: 10px;
+  align-items: center;
+  margin-top: 30px;
+}
+.allAuctions__status {
+  background-color: #379557;
+  width: 24px;
+  height: 70px;
+  border-radius: 10px 0px 0px 10px;
+}
+.allAuction__data {
+  color: #212126;
+  font-family: "Libre Bodoni";
+  font-size: 18px;
+}
+.admin__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
