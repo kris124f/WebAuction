@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   var inputField = document.querySelector(".input");
 
-  // Sætter standardværdi til inputfeltet til at være et plus-symbol
   inputField.value = "+";
 
   inputField.addEventListener("input", function () {
