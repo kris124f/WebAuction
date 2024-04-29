@@ -176,11 +176,10 @@ function createAuction() {
   })
   .then(data => {
     console.log('Auction created successfully:', data);
-    // Optionally, you can clear the form fields or show a success message here
+    
   })
   .catch(error => {
     console.error('There was a problem creating the auction:', error);
-    // Optionally, you can show an error message to the user
   });
 }
 document.addEventListener('DOMContentLoaded', function() {
