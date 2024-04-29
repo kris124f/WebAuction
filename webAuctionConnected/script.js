@@ -68,8 +68,6 @@ fetch('http://127.0.0.1:3000/items/all')
                 article.querySelector('.productCard__currentPrice').textContent = `${item.actualPrice} DKK`;
 
                 article.dataset.itemId = item.itemId;
-
-                // Assuming 'item.image' contains the base64 image data
                 if (item.image) {
                     const img = article.querySelector('.productCard__image');
                     img.src = item.image;
@@ -87,16 +85,11 @@ function test(){
             const article = document.querySelectorAll('.productCard')[index];
 
             if (article) {
-                // Populate the article with data from the item
                 article.querySelector('.productCard__brand').textContent = item.title;
                 article.querySelector('.productCard__description').textContent = item.description;
                 article.querySelector('.productCard__timeLeft').textContent = `Time left: ${new Date(item.expires).toLocaleString()}`;
                 article.querySelector('.productCard__currentPrice').textContent = `${item.actualPrice} DKK`;
-
-                // Set the data-item-id attribute to the itemId of the item
                 article.dataset.itemId = item.itemId;
-
-                // Assuming 'item.image' contains the base64 image data
                 if (item.image) {
                     const img = article.querySelector('.productCard__image');
                     img.src = item.image;
@@ -141,7 +134,6 @@ function setNewBet(itemId, value) {
   })
   .then(data => {
     console.log('Response from server:', data); 
-    // Assuming you want to refresh the page after successful bid
     test();
   })
   .catch(error => {
