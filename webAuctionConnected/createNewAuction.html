@@ -12,19 +12,11 @@
       <form class="createAuction__form" action="">
         <section>
           <section class="createAuction__data --brand text__body">
-            <label class="createAuction__label" for="name">Brand</label>
+            <label class="createAuction__label" for="name">Title</label>
             <input class="createAuction__input" type="text" name="name" />
           </section>
           <section class="createAuction__data --model text__body">
-            <label class="createAuction__label" for="name">Model</label>
-            <input class="createAuction__input" type="text" name="name" />
-          </section>
-          <section class="createAuction__data --year text__body">
-            <label class="createAuction__label" for="name">Year</label>
-            <input class="createAuction__input" type="text" name="name" />
-          </section>
-          <section class="createAuction__data --kilometer text__body">
-            <label class="createAuction__label" for="name">Kilometer</label>
+            <label class="createAuction__label" for="name">Description</label>
             <input class="createAuction__input" type="text" name="name" />
           </section>
         </section>
@@ -40,7 +32,7 @@
             name="trip-start"
             value="2018-07-22"
             min="2018-01-01"
-            max="2018-12-31"
+            max="2020-12-31"
           />
         </section>
         <section class="createAuction__data createAuction__image">
@@ -49,7 +41,11 @@
           >
           <input class="createAuction__imageInput" type="file" name="images" />
         </section>
+        <section>
+          <input type="button" id="create_auction_button" value="Create Auction" />
+        </section>
       </form>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

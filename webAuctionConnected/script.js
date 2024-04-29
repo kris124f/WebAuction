@@ -112,6 +112,9 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+
+
+
 function setNewBet(itemId, value) {
   const bidData = {
     "userName": "DARPZ",
@@ -140,3 +143,48 @@ function setNewBet(itemId, value) {
     console.error('Error placing bid:', error);
   });
 }
+
+function createAuction() {
+  const title = document.querySelector('.createAuction__data.--brand input').value;
+  const description = document.querySelector('.createAuction__data.--model input').value;
+  const startPrice = document.querySelector('.createAuction__data.--startingPrice input').value;
+
+  const expiryDate = document.getElementById('start').value;
+  console.log("Hej")
+  const formData = {
+    "itemId": 12,
+    "title": title,
+    "description": description,
+    "startPrice": startPrice,
+    "actualPrice": startPrice,
+    "expires": expiryDate,
+    "active": true
+  };
+
+  fetch('http://127.0.0.1:3000/items', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Auction created successfully:', data);
+    // Optionally, you can clear the form fields or show a success message here
+  })
+  .catch(error => {
+    console.error('There was a problem creating the auction:', error);
+    // Optionally, you can show an error message to the user
+  });
+}
+document.addEventListener('DOMContentLoaded', function() {
+  const createAuctionButton = document.getElementById('create_auction_button');
+  createAuctionButton.addEventListener('click', createAuction);
+});
+
