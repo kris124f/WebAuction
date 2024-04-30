@@ -77,7 +77,7 @@ fetch('http://127.0.0.1:3000/items/all')
     })
     .catch(error => console.error('Error:', error));
 
-function test(){
+function getAllItems(){
   fetch('http://127.0.0.1:3000/items/all')
     .then(response => response.json())
     .then((items) => {
@@ -150,7 +150,6 @@ function createAuction() {
   const startPrice = document.querySelector('.createAuction__data.--startingPrice input').value;
 
   const expiryDate = document.getElementById('start').value;
-  console.log("Hej")
   const formData = {
     "itemId": 12,
     "title": title,
