@@ -204,3 +204,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const createAuctionButton = document.getElementById('create_auction_button');
   createAuctionButton.addEventListener('click', createAuction);
 });
+
+
+// Declare a new variable with a different name
+let newButton = document.querySelector('admin__button');
+
+// Then, add a click event listener to the new button
+newButton.addEventListener('click', function() {
+    console.log("ra")
+    //window.location.href = 'createNewAuction.html';
+});
+
