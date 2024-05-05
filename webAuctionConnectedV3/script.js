@@ -57,22 +57,51 @@ function bid(Username,itemId,value)
 fetch('http://127.0.0.1:3000/items/all')
     .then(response => response.json())
     .then((items) => {
-        items.forEach((item, index) => {
-            const article = document.querySelectorAll('.productCard')[index];
-
-            if (article) {
-                // Populate the article with data from the item
-                article.querySelector('.productCard__brand').textContent = item.title;
-                article.querySelector('.productCard__description').textContent = item.description;
-                article.querySelector('.productCard__timeLeft').textContent = `Time left: ${new Date(item.expires).toLocaleString()}`;
-                article.querySelector('.productCard__currentPrice').textContent = `${item.actualPrice} DKK`;
-
-                article.dataset.itemId = item.itemId;
-                if (item.image) {
-                    const img = article.querySelector('.productCard__image');
-                    img.src = item.image;
-                }
-            }
+        const productCardsContainer = document.querySelector('.productCards');
+        items.forEach((item) => {
+            const article = document.createElement('article');
+            article.classList.add('productCard');
+            article.dataset.itemId = item.itemId;
+            const imageSection = document.createElement('section');
+            imageSection.classList.add('productCard__section');
+            const image = document.createElement('img');
+            image.classList.add('productCard__image');
+            image.src = item.image || 'images/default_image.png'; 
+            image.alt = item.title;
+            imageSection.appendChild(image);
+            const infoSection = document.createElement('section');
+            infoSection.classList.add('productCard__section');
+            const brand = document.createElement('h3');
+            brand.classList.add('productCard__brand');
+            brand.textContent = item.title;
+            const description = document.createElement('p');
+            description.classList.add('productCard__description');
+            description.textContent = item.description;
+            const timeLeft = document.createElement('p');
+            timeLeft.classList.add('productCard__timeLeft');
+            timeLeft.textContent = `Time left: ${new Date(item.expires).toLocaleString()}`;
+            const currentPrice = document.createElement('p');
+            currentPrice.classList.add('productCard__currentPrice');
+            currentPrice.textContent = `${item.actualPrice} DKK`;
+            const input = document.createElement('input');
+            input.setAttribute('type', 'number');
+            input.classList.add('productCard__input');
+            const button = document.createElement('button');
+            button.classList.add('productCard__button');
+            button.textContent = 'Place bid';
+            const information = document.createElement('p');
+            information.classList.add('productCard__information');
+            information.textContent = 'Min. 2000 DKK above the current offer';
+            infoSection.appendChild(brand);
+            infoSection.appendChild(description);
+            infoSection.appendChild(timeLeft);
+            infoSection.appendChild(currentPrice);
+            infoSection.appendChild(input);
+            infoSection.appendChild(button);
+            infoSection.appendChild(information);
+            article.appendChild(imageSection);
+            article.appendChild(infoSection);
+            productCardsContainer.appendChild(article);
         });
     })
     .catch(error => console.error('Error:', error));
@@ -102,15 +131,21 @@ function getAllItems(){
 
 }
 document.addEventListener("DOMContentLoaded", function() {
-  const buttons = document.querySelectorAll('.productCard__button');
-  buttons.forEach(button => {
-    button.addEventListener('click', function() {
-      const itemId = this.closest('.productCard').dataset.itemId;
-      const input = this.closest('.productCard').querySelector('.productCard__input').value;
-      setNewBet(itemId, input);
-    });
+  const productCardsContainer = document.querySelector('.productCards');
+  productCardsContainer.addEventListener('click', function(event) {
+      if (event.target.classList.contains('productCard__button')) {
+          const productCard = event.target.closest('.productCard');
+          if (productCard) {
+              const itemId = productCard.dataset.itemId;
+              const input = productCard.querySelector('.productCard__input').value;
+              console.log(itemId)
+              setNewBet(itemId, input);
+              
+          }
+      }
   });
 });
+
 
 
 
@@ -137,7 +172,7 @@ function setNewBet(itemId, value) {
   })
   .then(data => {
     console.log('Response from server:', data); 
-    test();
+    getAllItems()
   })
   .catch(error => {
     console.error('Error placing bid:', error);
@@ -203,15 +238,5 @@ function createAuction() {
 document.addEventListener('DOMContentLoaded', function() {
   const createAuctionButton = document.getElementById('create_auction_button');
   createAuctionButton.addEventListener('click', createAuction);
-});
-
-
-// Declare a new variable with a different name
-let newButton = document.querySelector('admin__button');
-
-// Then, add a click event listener to the new button
-newButton.addEventListener('click', function() {
-    console.log("ra")
-    //window.location.href = 'createNewAuction.html';
 });
 
